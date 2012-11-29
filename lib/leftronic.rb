@@ -51,6 +51,16 @@ class Leftronic
     post stream, 'list' => array.flatten.map{|item| {'listItem' => item}}
   end
 
+  # Push HTML to an HTML widget
+  def push_html(stream, html)
+    post stream, 'html' => html
+  end
+
+  # Push list of lists to a Table widget
+  def push_table(stream, rows)
+    post stream, 'table' => rows
+  end
+
   protected
 
   def post(stream, params)
